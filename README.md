@@ -1,2 +1,625 @@
-# XII-MANBIS-AL-FALAH-LEMAHABANG.
-WEB
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XII MANBIS - MADRASAH ALIYAH AL-FALAH LEMAHABANG</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Plus Jakarta Sans & Merriweather -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        theme: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            500: '#f97316',
+                            600: '#ea580c', // Warm Red-Orange
+                            700: '#c2410c', // Deep Terracotta / Orange Kemerahan
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                            950: '#431407',
+                        },
+                        warm: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            800: '#292524',
+                            900: '#1c1917',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fafaf9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ea580c;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 font-sans antialiased selection:bg-orange-100 selection:text-orange-900">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 transition-all duration-300" id="navbar" data-aos="fade-down" data-aos-duration="800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Left -->
+                <a href="#home" class="flex items-center space-x-3.5 group">
+                    <img src="logo/logo kelas.jpg" alt="Logo" class="w-11 h-11 rounded-full bg-theme-600 text-white flex items-center justify-center shadow-sm group-hover:bg-theme-700 transition-colors">
+                        
+ 
+                    <div>
+                        <span class="text-lg font-bold tracking-tight text-stone-900 block leading-tight">XII MANBIS</span>
+                        <span class="text-xs text-theme-600 font-semibold tracking-wider uppercase">MA AL-FALAH</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Right -->
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-3">
+                    <a href="#visi-misi" class="px-3.5 py-2 rounded-lg text-sm font-medium text-stone-600 hover:text-theme-600 hover:bg-orange-50 transition-colors">Visi Misi</a>
+                    <a href="#struktur" class="px-3.5 py-2 rounded-lg text-sm font-medium text-stone-600 hover:text-theme-600 hover:bg-orange-50 transition-colors">Struktur</a>
+                    <a href="#media" class="px-3.5 py-2 rounded-lg text-sm font-medium text-stone-600 hover:text-theme-600 hover:bg-orange-50 transition-colors">Media Kelas</a>
+                    <a href="#anggota" class="px-3.5 py-2 rounded-lg text-sm font-medium text-stone-600 hover:text-theme-600 hover:bg-orange-50 transition-colors">Anggota Kelas</a>
+                    <a href="#kenangan" class="px-3.5 py-2 rounded-lg text-sm font-medium text-stone-600 hover:text-theme-600 hover:bg-orange-50 transition-colors">Galeri Foto</a>
+                    <a href="#kontak" class="px-3.5 py-2 rounded-lg text-sm font-medium text-stone-600 hover:text-theme-600 hover:bg-orange-50 transition-colors">Hubungi Kami</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="p-2.5 rounded-lg text-stone-700 hover:bg-stone-100 focus:outline-none" aria-label="Toggle Menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-stone-200 bg-white px-4 pt-2 pb-6 space-y-1.5 shadow-lg">
+            <a href="#visi-misi" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-stone-700 hover:bg-orange-50 hover:text-theme-600">Visi Misi</a>
+            <a href="#struktur" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-stone-700 hover:bg-orange-50 hover:text-theme-600">Struktur Kelas</a>
+            <a href="#media" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-stone-700 hover:bg-orange-50 hover:text-theme-600">Media & Music</a>
+            <a href="#anggota" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-stone-700 hover:bg-orange-50 hover:text-theme-600">Anggota Kelas</a>
+            <a href="#kenangan" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-stone-700 hover:bg-orange-50 hover:text-theme-600">Galeri Foto</a>
+            <a href="#kontak" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-stone-700 hover:bg-orange-50 hover:text-theme-600">Hubungi Kami</a>
+        </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 bg-stone-900 text-white overflow-hidden">
+        <!-- Background Image dengan Dark Overlay & Zoom Animation -->
+        <div class="absolute inset-0 z-0">
+            <img src="foto/1.jpeg" 
+                 alt="Foto Angkatan XII MANBIS" 
+                 class="w-full h-full object-cover object-center filter brightness-[0.68] transform scale-105 transition-transform duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-b from-stone-950/70 via-stone-950/60 to-stone-950/90"></div>
+        </div>
+
+        <!-- Hero Content (Centered Alignment & Big Text with AOS) -->
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-28 text-center flex flex-col items-center">
+            <!-- Tagline Kelas -->
+            <div data-aos="fade-down" data-aos-duration="900" class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-theme-950/80 border border-theme-600/40 text-orange-300 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-8">
+                <span class="w-2 h-2 rounded-full bg-theme-500 animate-pulse"></span>
+                <span>Website Resmi Kelas</span>
+            </div>
+
+            <!-- Headline Utama -->
+            <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white leading-none mb-8 font-serif">
+                Welcome to <br>
+                <span class="text-theme-500 font-sans font-extrabold tracking-tight">MANAJEMEN BISNIS </span>
+            </h1>
+
+            <!-- Subteks -->
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="text-lg sm:text-xl text-stone-300 mb-10 font-light leading-relaxed max-w-2xl">
+                 kenangan, tempat tumbuh bersama, belajar, dan mengejar cita-cita di sekolah  <span class="text-white font-medium">MA AL-FALAH</span>.
+            </p>
+
+            <!-- Tombol Aksi di Tengah -->
+            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-5 w-full sm:w-auto">
+                <a href="#visi-misi" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-theme-600 hover:bg-theme-700 text-white font-semibold shadow-lg hover:shadow-orange-950/40 transform hover:-translate-y-0.5 transition-all text-base">
+                    <i data-lucide="compass" class="w-5 h-5 mr-2.5"></i>
+                    Visi Misi
+                </a>
+                <a href="#anggota" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-stone-800/90 hover:bg-stone-700 text-stone-200 font-semibold border border-stone-600 transform hover:-translate-y-0.5 transition-all text-base">
+                    <i data-lucide="users" class="w-5 h-5 mr-2.5 text-theme-500"></i>
+                    Anggota Kelas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SEKSI VISI MISI ================= -->
+    <section id="visi-misi" class="py-24 bg-white border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16" data-aos="fade-right">
+                <span class="text-xs font-bold uppercase tracking-widest text-theme-600 block mb-2">Nilai Utama</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 font-serif">Visi & Misi</h2>
+                <p class="text-stone-600 text-base mt-3">Pedoman arah langkah pembelajaran dan pembentukan karakter .</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Visi Card -->
+                <div data-aos="fade-up" data-aos-duration="800" class="bg-orange-50/50 border border-orange-100 rounded-2xl p-8 lg:p-10 relative flex flex-col justify-between hover:border-theme-500/50 hover:shadow-md transition-all">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-orange-100 text-theme-700 flex items-center justify-center mb-6">
+                            <i data-lucide="target" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 mb-4 font-serif">Visi</h3>
+                        <p class="text-stone-700 text-lg leading-relaxed italic font-serif">
+                            "Terwujudnya MA AL-FALAH sebagai madrasah unggulan yang menghasilkan lulusan beriman, berilmu, berakhlak mulia, berwawasan lingkungan, dan berdaya saing global."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Misi Card -->
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="bg-orange-50/50 border border-orange-100 rounded-2xl p-8 lg:p-10 relative flex flex-col justify-between hover:border-theme-500/50 hover:shadow-md transition-all">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-orange-100 text-theme-700 flex items-center justify-center mb-6">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 mb-4 font-serif">Misi</h3>
+                        <p class="text-stone-700 text-base leading-relaxed">
+                            Penyelenggaraan pembelajaran efektif, penguatan karakter Islami, pengembangan kompetensi pendidik, pemanfaatan teknologi informasi, serta membangun kemitraan dengan masyarakat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- ================= SEKSI STRUKTUR KELAS ================= -->
+<section id="struktur" class="py-24 bg-stone-50 border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-down">
+            <span class="text-xs font-bold uppercase tracking-widest text-theme-600 block mb-2">Kepengurusan</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 font-serif">Struktur Kelas</h2>
+            <div class="w-12 h-1 bg-theme-600 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="flex flex-col items-center space-y-6">
+            <!-- Wali Kelas -->
+            <div class="w-full max-w-xs" data-aos="zoom-in" data-aos-duration="700">
+                <div class="bg-white border-2 border-theme-600 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-16 h-16 rounded-full bg-orange-100 text-theme-700 mx-auto mb-3 flex items-center justify-center">
+                        <i data-lucide="user-check" class="w-8 h-8"></i>
+                    </div>
+                    <span class="text-xs font-bold tracking-widest text-theme-700 uppercase">Wali Kelas</span>
+                    <h4 class="text-lg font-bold text-stone-900 mt-1">Ade setiawati S.SI</h4>
+                </div>
+            </div>
+
+            <div class="w-0.5 h-6 bg-stone-300"></div>
+
+            <!-- Ketua & Wakil Ketua -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-xl" data-aos="fade-up" data-aos-duration="800">
+                <div class="bg-white border border-stone-200 rounded-xl p-5 text-center shadow-sm hover:border-theme-500 transition-colors">
+                    <span class="text-xs font-bold tracking-wider text-stone-500 uppercase block mb-1">Ketua Kelas</span>
+                    <h4 class="text-base font-bold text-stone-900">Muh Arfa</h4>
+                </div>
+                <div class="bg-white border border-stone-200 rounded-xl p-5 text-center shadow-sm hover:border-theme-500 transition-colors">
+                    <span class="text-xs font-bold tracking-wider text-stone-500 uppercase block mb-1">Wakil Ketua</span>
+                    <h4 class="text-base font-bold text-stone-900">Fadly Algazam</h4>
+                </div>
+            </div>
+
+            <div class="w-0.5 h-6 bg-stone-300"></div>
+
+            <!-- Sekretaris (di bawah Ketua) & Bendahara (di bawah Wakil Ketua) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-xl" data-aos="fade-up" data-aos-duration="900">
+                <div class="bg-white border border-stone-200 rounded-xl p-4 text-center shadow-sm hover:border-theme-500 transition-colors">
+                    <span class="text-xs font-semibold text-theme-600 block mb-1">Sekretaris </span>
+                    <h4 class="text-sm font-bold text-stone-900">Nur Hajriani</h4>
+                </div>
+                <div class="bg-white border border-stone-200 rounded-xl p-4 text-center shadow-sm hover:border-theme-500 transition-colors">
+                    <span class="text-xs font-semibold text-theme-600 block mb-1">Bendahara </span>
+                    <h4 class="text-sm font-bold text-stone-900">Rahma Unzila</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <!-- ================= SEKSI INSTAGRAM ================= -->
+<section id="media" class="py-24 bg-white border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-16" data-aos="fade-right">
+            <span class="text-xs font-bold uppercase tracking-widest text-theme-600 block mb-2">Komunitas & Audio</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 font-serif">Instagram & Pemutar Musik YouTube</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <!-- Instagram Link Banner -->
+            <div data-aos="fade-up" data-aos-duration="800" class="bg-orange-50/40 border border-stone-200 rounded-2xl p-8 flex flex-col justify-between hover:border-theme-500/50 transition-colors relative overflow-hidden">
+                
+                <div>
+                    <!-- Header Card: Logo Instagram & Username -->
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 text-white flex items-center justify-center shadow-md">
+                            <!-- Menggunakan SVG langsung agar logo pasti muncul tanpa tergantung library eksternal -->
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 bg-pink-100 text-pink-700 rounded-full">@twelveips____</span>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-stone-900 mb-3 font-serif">Akun Instagram Resmi Kelas kami</h3>
+                    <p class="text-stone-600 mb-6 leading-relaxed">
+                        Lihat beragam dokumentasi kegiatan, momen seru, serta update keseharian seluruh siswa kelas XII MANBIS di Instagram.
+                    </p>
+
+                    
+
+                <!-- Tombol Kunjungi Bawah -->
+                <a href="https://www.instagram.com/twelveips____?utm_source=ig_web_button_share_sheet&xtok=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full py-3.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-white font-semibold transition-colors shadow-sm">
+                    <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                    Kunjungi Instagram Kelas
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+                <!-- ================= PEMUTAR SPOTIFY ================= -->
+<div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="bg-orange-50/40 border border-stone-200 rounded-2xl p-8 flex flex-col justify-between">
+    <div>
+        <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center space-x-3">
+                <!-- Ikon bisa diganti atau tetap pakai musik -->
+                <div class="w-10 h-10 rounded-xl bg-green-100 text-green-700 flex items-center justify-center">
+                    <i data-lucide="music" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-stone-900">Pemutar Lagu Kelas</h3>
+                    <p class="text-xs text-stone-500">Lagu Angkatan XII MANBIS (Spotify)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- EMBED SPOTIFY -->
+        <div class="w-full">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4R9G7azXaZe93KTX65P9fU?utm_source=generator&si=b71442e4289f4bfc" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                
+            </iframe>
+        </div>
+        <!-- /AKHIR EMBED SPOTIFY -->
+
+    </div>
+</div>
+    <!-- ================= SEKSI ANGGOTA KELAS (31 SISWA) ================= -->
+    <section id="anggota" class="py-24 bg-stone-50 border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Title & Search Bar -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6" data-aos="fade-down">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-theme-600 block mb-2">Daftar Lengkap</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 font-serif">31 Anggota Kelas</h2>
+                </div>
+
+                <!-- Search Input -->
+                <div class="relative w-full md:w-80">
+                    <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400"></i>
+                    <input type="text" id="search-input" placeholder="Cari nama siswa..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-stone-300 text-stone-800 text-sm placeholder-stone-400 focus:outline-none focus:border-theme-600 focus:ring-1 focus:ring-theme-600 shadow-sm transition-all">
+                </div>
+            </div>
+
+            <!-- Student Grid -->
+            <div id="student-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
+                <!-- Javascript will populate this grid -->
+            </div>
+
+            <div id="no-results" class="hidden text-center py-12">
+                <i data-lucide="user-x" class="w-10 h-10 text-stone-400 mx-auto mb-2"></i>
+                <p class="text-stone-500 text-sm">Nama siswa tidak ditemukan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SEKSI GALERI FOTO KENANGAN (16:9) ================= -->
+    <section id="kenangan" class="py-24 bg-white border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-16" data-aos="fade-right">
+                <span class="text-xs font-bold uppercase tracking-widest text-theme-600 block mb-2">Dokumentasi</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 font-serif">Foto Kenangan Kelas</h2>
+                <p class="text-stone-600 text-sm mt-2">Kumpulan momen berharga dalam format 16:9</p>
+            </div>
+
+            <!-- Grid Galeri 16:9 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div data-aos="fade-up" data-aos-duration="700" class="group relative aspect-video rounded-xl overflow-hidden bg-stone-100 border border-stone-200 cursor-pointer shadow-sm hover:shadow-md transition-all" onclick="openLightbox('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200', 'Kebersamaan Angkatan XII MANBIS')">
+                    <img src="foto/2.jpeg" alt="Foto Kenangan 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-stone-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <p class="text-white font-medium text-sm">Kebersamaan kelas X</p>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="100" class="group relative aspect-video rounded-xl overflow-hidden bg-stone-100 border border-stone-200 cursor-pointer shadow-sm hover:shadow-md transition-all" onclick="openLightbox('https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1200', 'Kegiatan Belajar Kelompok')">
+                    <img src="foto/11.jpeg" alt="Foto Kenangan 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-stone-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <p class="text-white font-medium text-sm">jamkos</p>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" class="group relative aspect-video rounded-xl overflow-hidden bg-stone-100 border border-stone-200 cursor-pointer shadow-sm hover:shadow-md transition-all" onclick="openLightbox('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200', 'Momen Peringatan Hari Besar')">
+                    <img src="foto/22.jpeg" alt="Foto Kenangan 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-stone-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <p class="text-white font-medium text-sm">Momen Peringatan Hari Guru</p>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-duration="700" class="group relative aspect-video rounded-xl overflow-hidden bg-stone-100 border border-stone-200 cursor-pointer shadow-sm hover:shadow-md transition-all" onclick="openLightbox('https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1200', 'Kegiatan Penghijauan Madrasah')">
+                    <img src="foto/55.jpeg" alt="Foto Kenangan 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-stone-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <p class="text-white font-medium text-sm">Lombah 17 Agustus</p>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="100" class="group relative aspect-video rounded-xl overflow-hidden bg-stone-100 border border-stone-200 cursor-pointer shadow-sm hover:shadow-md transition-all" onclick="openLightbox('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200', 'Presentasi & Diskusi Kelas')">
+                    <img src="foto/44.jpeg" alt="Foto Kenangan 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-stone-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <p class="text-white font-medium text-sm">Gerak Jalan</p>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" class="group relative aspect-video rounded-xl overflow-hidden bg-stone-100 border border-stone-200 cursor-pointer shadow-sm hover:shadow-md transition-all" onclick="openLightbox('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200', 'Foto Bersama Akhir Semester')">
+                    <img src="foto/1.jpeg" alt="Foto Kenangan 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-stone-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <p class="text-white font-medium text-sm">Foto Bersama Akhir Semester</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= HALAMAN TERAKHIR: HUBUNGI KAMI (TANPA NAMA PENGIRIM) ================= -->
+    <section id="kontak" class="py-24 bg-stone-50" data-aos="fade-up">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white border border-stone-200 rounded-2xl p-8 sm:p-12 shadow-sm">
+                <!-- Title & Intro -->
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <div class="w-12 h-12 rounded-xl bg-orange-100 text-theme-700 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="message-square-plus" class="w-6 h-6"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-stone-900 font-serif">Hubungi Kami & Lapor Kesalahan</h2>
+                    <p class="text-stone-600 text-sm mt-2">
+                        Ada kesalahan ejaan nama, nomor urut, atau foto yang kurang sesuai? Sampaikan masukanmu agar Reski DJ dapat memperbaruinya.
+                    </p>
+                </div>
+
+                <!-- Form Masukan (Tanpa Input Nama Pengirim) -->
+                <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Kategori Masukan / Laporan</label>
+                        <select id="contact-category" class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 text-sm focus:outline-none focus:border-theme-600 focus:bg-white transition-all">
+                            <option value="Koreksi Nama / Ejaan Siswa">Koreksi Nama </option>
+                            <option value="Perubahan Foto Kenangan">Perubahan Foto Kenangan</option>
+                            <option value="Struktur Kelas">Struktur Kelas</option>
+                            <option value="Saran & Masukan Lainnya">Saran & Masukan Lainnya</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Pesan / Detail Kesalahan</label>
+                        <textarea id="contact-message" rows="4" required placeholder="Tuliskan detail kesalahan atau masukan kamu di sini..." class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 text-sm focus:outline-none focus:border-theme-600 focus:bg-white transition-all resize-none"></textarea>
+                    </div>
+
+                    <!-- Alert Status -->
+                    <div id="contact-alert" class="hidden p-4 rounded-xl bg-orange-50 border border-orange-200 text-theme-800 text-sm text-center font-medium">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 inline mr-1 text-theme-600"></i>
+                        Membuka WhatsApp untuk mengirim pesan laporan ke admin...
+                    </div>
+
+                    <div class="flex items-center justify-end pt-3">
+                        <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-theme-600 hover:bg-theme-700 text-white font-semibold transition-colors shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4 mr-2"></i>
+                            Kirim via WhatsApp Admin
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= LIGHTBOX MODAL ================= -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-stone-950/85 backdrop-blur-sm hidden items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-stone-300 hover:text-white focus:outline-none">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <div class="max-w-4xl w-full text-center">
+            <div class="aspect-video w-full mb-4 rounded-xl overflow-hidden border border-stone-700 bg-stone-900">
+                <img id="lightbox-img" src="" alt="Enlarged preview" class="w-full h-full object-cover">
+            </div>
+            <p id="lightbox-caption" class="text-base text-stone-200 font-medium"></p>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-stone-900 text-stone-300 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center items-center space-x-2.5 mb-3">
+                <div class="w-7 h-7 rounded-full bg-theme-600 text-white flex items-center justify-center text-xs">
+                    <i data-lucide="book-open" class="w-4 h-4"></i>
+                </div>
+                <span class="text-base font-bold text-white">XII MANBIS</span>
+            </div>
+            <p class="text-stone-400 text-xs mb-4">MA AL-FALAH LEMAHABANG &bull; Unggulan, Beriman, & Berdaya Saing Global</p>
+            <p class="text-stone-500 text-xs mb-3">&copy; 2026 XII MANBIS. All rights reserved.</p>
+            
+            <!-- Developer Credit -->
+            <div class="pt-4 border-t border-stone-800/80 max-w-xs mx-auto">
+                <p class="text-xs text-stone-400 flex items-center justify-center gap-1.5 font-medium">
+                    <span>Developer:</span>
+                    <a href="https://instagram.com/reski__dj26" target="_blank" rel="noopener noreferrer" class="text-theme-500 hover:text-theme-400 font-semibold hover:underline flex items-center gap-1 transition-colors">
+                        <i data-lucide="instagram" class="w-3.5 h-3.5 inline"></i>
+                        reski__dj26
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT LOGIC & AOS INIT ================= -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        const students = [
+            { id: 1, name: "Afdan Zikri" },
+            { id: 2, name: "Ahmad Fahri" },
+            { id: 3, name: "Ahmad Rifai ." },
+            { id: 4, name: "Algazali Bayu" },
+            { id: 5, name: "Algifary Candika ." },
+            { id: 6, name: "Anugrah Amana alan." },
+            { id: 7, name: "Bintang Pratama" },
+            { id: 8, name: "Elvira Adelia" },
+            { id: 9, name: "Erlin Lavia" },
+            { id: 10, name: "Fadly Algazam" },
+            { id: 11, name: "Fryza Setya Ayudita" },
+            { id: 12, name: "Irfan afndi" },
+            { id: 13, name: "Idam Alif Praja" },
+            { id: 14, name: "Imam Rasti" },
+            { id: 15, name: "Inayah" },
+            { id: 16, name: "Laela Nabila" },
+            { id: 17, name: "Muh. Sahril" },
+            { id: 18, name: "Muh. Rhezky Yusuf R.aditya DJ" },
+            { id: 19, name: "Muh. Ashrul" },
+            { id: 20, name: "Muh. Hafidz" },
+            { id: 21, name: "Renzy Larian" },
+            { id: 22, name: "Muh. Ridho" },
+            { id: 23, name: "Muh. Arfa" },
+            { id: 24, name: "Muh. Damas" },
+            { id: 25, name: "Mutmainna" },
+            { id: 26, name: "Nur hajriani" },
+            { id: 27, name: "Nur Safina Salsabila" },
+            { id: 28, name: "Nurul Alfirah" },
+            { id: 29, name: "Rahma Unzila" },
+            { id: 30, name: "Risal Avanza" },
+            { id: 31, name: "Riyan Andino" }
+        ];
+
+        function renderStudents(list) {
+            const grid = document.getElementById('student-grid');
+            const noResults = document.getElementById('no-results');
+            
+            grid.innerHTML = '';
+            
+            if(list.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            list.forEach((student, index) => {
+                const card = document.createElement('div');
+                card.className = "bg-white border border-stone-200 rounded-xl p-3.5 flex items-center space-x-3 shadow-sm hover:border-theme-600 hover:shadow-md transform hover:-translate-y-0.5 transition-all";
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-duration', '500');
+                card.setAttribute('data-aos-delay', (index % 4) * 50);
+                
+                card.innerHTML = `
+                    <div class="w-8 h-8 rounded-lg bg-orange-50 text-theme-700 border border-orange-200 flex items-center justify-center flex-shrink-0 text-xs font-bold">
+                        ${student.id}
+                    </div>
+                    <div class="overflow-hidden">
+                        <h4 class="text-stone-900 font-semibold text-sm truncate">${student.name}</h4>
+                        <span class="text-[11px] text-stone-500 block">Siswa No. ${student.id}</span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = students.filter(s => s.name.toLowerCase().includes(query) || s.id.toString().includes(query));
+            renderStudents(filtered);
+        });
+
+        function openLightbox(imgUrl, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightboxImg.src = imgUrl;
+            lightboxCaption.textContent = caption;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const category = document.getElementById('contact-category').value;
+            const message = document.getElementById('contact-message').value;
+            const alertBox = document.getElementById('contact-alert');
+
+            alertBox.classList.remove('hidden');
+
+            const textWhatsApp = `Halo Admin XII MANBIS,%0A%0ASaya ingin melaporkan kesalahan / masukan website:%0A*Kategori:* ${encodeURIComponent(category)}%0A*Pesan/Detail:* ${encodeURIComponent(message)}`;
+            
+            setTimeout(() => {
+                window.open(`https://wa.me/085656412240?text=${textWhatsApp}`, '_blank');
+            }, 1000);
+        }
+
+       
+          
+
+        
+
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        window.onload = function() {
+            lucide.createIcons();
+            renderStudents(students);
+            // Initialize AOS Library
+            AOS.init({
+                once: true,
+                offset: 50,
+                easing: 'ease-out-cubic'
+            });
+        };
+    </script>
+</body>
+</html>
